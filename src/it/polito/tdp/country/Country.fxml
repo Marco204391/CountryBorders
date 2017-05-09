@@ -20,17 +20,17 @@
                <children>
                   <Label text="Stato di partenza" />
                   <ComboBox fx:id="cbxPartenza" prefWidth="150.0" />
-                  <Button mnemonicParsing="false" onAction="#doPartenza" text="Cerca raggiungibili" />
+                  <Button mnemonicParsing="false" onAction="#handleRaggiungibili" text="Cerca raggiungibili" />
                </children>
             </HBox>
             <HBox spacing="20.0">
                <children>
                   <Label text="Stato di destinazione" />
                   <ComboBox fx:id="cbxDestinazione" prefWidth="150.0" />
-                  <Button mnemonicParsing="false" onAction="#doDestinazione" text="Cerca percorso" />
+                  <Button mnemonicParsing="false" onAction="#handlePercorso" text="Cerca percorso" />
                </children>
             </HBox>
-            <TextArea editable="false" />
+            <TextArea fx:id="txtResult" editable="false" />
          </children>
       </VBox>
    </center>
