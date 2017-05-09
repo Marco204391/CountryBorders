@@ -17,6 +17,7 @@ public class Model {
 	
 	private UndirectedGraph<Country, DefaultEdge> graph  ;
 	private List<Country> countries;
+	private Map<Country, Country> alberoVisita;
 	
 	public Model() {
 		
@@ -46,7 +47,8 @@ public class Model {
 		while(bfi.hasNext()){
 			list.add(bfi.next());
 		}
-		System.out.println(albero.toString());
+		this.alberoVisita=albero;
+		//System.out.println(albero.toString());
 		return list;
 	}
 	
@@ -121,6 +123,19 @@ public class Model {
 
 	public void printStats() {
 		System.out.format("Grafo: Vertici %d, Archi %d\n", graph.vertexSet().size(), graph.edgeSet().size());
+	}
+
+	public List<Country> getPercorso(Country destinazione) {
+		
+		List<Country> percorso = new ArrayList<Country>();
+		
+		Country c = destinazione;
+		while(c!=null){
+			percorso.add(c);
+			c =alberoVisita.get(c);
+			
+		}
+		return percorso;
 	}
 
 }

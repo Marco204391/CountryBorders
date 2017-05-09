@@ -38,6 +38,11 @@ public class CountryController {
     @FXML
     void handlePercorso(ActionEvent event) {
 
+    	Country destinazione = cbxDestinazione.getValue();
+    	
+    	List<Country> percorso = model.getPercorso(destinazione);
+    	
+    	txtResult.appendText(percorso.toString()+"\n");
     }
 
     @FXML
